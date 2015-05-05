@@ -52,7 +52,6 @@ var app = {
         this.store = new WebSqlStore(function() {
             self.route();
         });
-        this.showAlert("Database Initialized", "Info");
     }
 
 };
