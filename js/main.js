@@ -37,6 +37,14 @@ var app = {
         }
     },
 
+    showAlert: function (message, title) {
+        if (navigator.notification) {
+            navigator.notification.alert(message, null, title, 'OK');
+        } else {
+            alert(title ? (title + ": " + message) : message);
+        }
+    },
+
     initialize: function() {
         var self = this;
         this.detailsURL = /^#employees\/(\d{1,})/;
@@ -44,6 +52,7 @@ var app = {
         this.store = new WebSqlStore(function() {
             self.route();
         });
+        this.showAlert("Database Initialized", "Info");
     }
 
 };

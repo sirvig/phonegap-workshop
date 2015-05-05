@@ -14,6 +14,7 @@ var WebSqlStore = function(successCallback, errorCallback) {
                 },
                 function() {
                     console.log('Transaction success');
+
                     if (successCallback) successCallback();
                 }
         )
